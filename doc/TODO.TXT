@@ -1,0 +1,19 @@
+- Current Objectives
+
+  1. Find a good data structure for maze, etc. 
+     Build a char array that can be dumped with printf() to stdout of the maze
+     Goal is to stick to the original as much as possible.
+
+  2. Research the controller and input idea, wheather to use sigaction() 
+     or SDL for catching the key presses, etc.
+
+  3. Pwn some ncurses library demo, to get the feel of how ncruses work.
+     Perhaps a simple timer and double-buffering technique. So that we could
+     abstract the library specific function to something relative to the game.
+
+------------------------------------------------------------------------------
+
+6.1.05
+
+  Got some reseblence of the game, we have PacDude(tm)(c)(R) ghosts and map.
+  The controls are abit akward. We're just using ncurses and signal for now.

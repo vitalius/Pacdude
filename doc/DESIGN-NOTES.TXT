@@ -1,0 +1,9 @@
+Consider the MVC - Model View Control design approach.
+
+outline info http://www.moock.org/lectures/mvc/
+
+Since C isn't object oriented, MVC idea doesn't directly effect
+our programs. However, the basic design idea presented behind
+this design pattern, i think, is achievable even in C. 
+
+At least, it would be considered as good aproach towards software design.

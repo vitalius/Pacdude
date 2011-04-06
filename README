@@ -1,0 +1,82 @@
+Authors:
+mavez
+lantis
+vitalius
+
+IMPLEMENTATION DISCUSSOIN
+
+Objects:
+
+Pacman *. Contains all information about our lil hero, position,
+	how many lifes he got, and so on.
+Ghosts *. Contains all information about the ghosts, plus an
+	array of pointers to specific ghosts, I assume? 
+	maybe a structure to store the informations of each, e.g.:
+typedef struct {
+	int type;
+	int colour;
+	int how_many;
+	struct *ghosts_t {
+		int pos[1][1];
+		int whatever;
+	} ghosts[how_many];
+} Ghosts;
+(does that work, is that even valid C? lol)
+Maze *. Our lil level!!!112.
+
+
+Functions:
+
+init*()
+General: Init an Object, e.g. Pacman *p = initPacman().
+	They may not return something.
+	There should/could be a "master" init() that inits misc
+	stuff like curses, sound (?) and other things.
+	(initWindow() is depreciated therefore, is that ok?)
+Location: Should they be in modules like (here) pacman/ or similar,
+	accessible through pacman.h ; or should they be in init.h?
+
+
+draw*()
+General: Draw something on the screen. Frontends for curses 
+	or alike, e.g. drawPacman(p).
+Location: same question as above, in display/ modules or in
+	display.h?
+
+
+is*()
+General: Query a status from the objects, e.g. if Pacman *p hit
+	a wall: if ( isWall(m, getLocation(p,dir)) )
+	
+
+move*()
+General: Move objects from the current location to other locations,
+	or similar. 
+
+get*()
+General: get (system) information, e.g. the direction the user
+	wants to move (he pressed cursor-left or sth). 
+	Or what resolution we are on, in pixels or "characters".
+
+
+
+Misc functions that don't belong into above groups:
+	Should they be prefixed "misc"? Imho not.
+	Self-explaining names should be sufficent.
+
+---------------------------------------------------------------------------
+***************************************************************************
+
+      GAME-PLAY
+
+  Suggestions:
+     1. Ghost BOSS!!!111
+     2. Let ghosts eat pebbles, and then when PacDude hits vitamin pill
+        he'll pwn all the ghosts and their pebbles. If no more vitamin
+        pills left, and ghosts still have some pebbles, then GAME OVAH!! 
+     3. Super-Bonus-Pills allow PACDUDE eat through walls!
+     4. Force fields, make pacdude drop a temporary wall in back of him
+        to repulse ghosts that are chasing him, wall may last 3 seconds
+     5. BIO-SLIME feature, if there is space ahead of pacdude, he may
+        fire some bio-slime-web-like-rope that would attach to the end
+        of the straight path, and will transfer our hero at 3x the speed.
